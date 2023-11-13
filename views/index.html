@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(대/박/맛/집)</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <header>
+        <a href="http://localhost:8080"><img src="/img/logo.png" alt="로고"></a>
+        <ul>
+            <li><a href="http://localhost:8080/users/1">이벤트</a></li>
+            <li><a href="http://localhost:8080/likes/1">메-뉴</a></li>
+            <li><a href="http://localhost:8080/reservations/1">예-약</a></li>
+        </ul>
+    </header>
+    <main>
+        <section id="name">
+            <h1>(대/박/맛/집)</h1>
+        </section>
+        <section id="text">
+            <ul>
+                <li>☞ 파격! 예약 시 콜라 무료 드림</li>
+                <li>☞ 먹는 즉시 맛잘알 보장 가능</li>
+                <li id="gak">
+                    <p>☞ 배고프고 피곤한 계대생 대대대환영</p>
+                    <img src="/img/gak.png" alt="이 각도는 인생 맛집 각">
+                </li>
+            </ul>
+            <div id="come">
+                <img src="/img/come.png" alt="주소">
+            </div>
+            <div id="call">
+                <h2>>>> localhost:8080/</h2>
+                <ul>
+                    <li>파격제안</li>
+                    <li>가맹문의</li>
+                </ul>
+            </div>
+        </section>    
+    </main>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/sequelize.js"></script>
+
+</body>
+</html>

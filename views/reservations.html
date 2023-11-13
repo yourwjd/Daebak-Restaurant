@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(대/박/맛/집) (예/약)</title>
+    <link rel="stylesheet" href="/css/reservations.css">
+  </head>
+  <body>
+    <header>
+      <a href="http://localhost:8080"><img src="/img/logo.png" alt="로고"></a>
+      <ul>
+          <li><a href="http://localhost:8080/users/1">이벤트</a></li>
+          <li><a href="http://localhost:8080/likes/1">메-뉴</a></li>
+          <li><a href="http://localhost:8080/reservations/1">예-약</a></li>
+      </ul>
+    </header>
+
+    <main>
+      <section id="text">
+        <img src="/img/mat.png" alt="오로지 맛으로 승부합니다 이미지">
+        <ul>
+          <li>~상시대기~</li>
+          <li>~신속접수~</li>
+          <li>~고민금지~</li>
+          <li>~맛집보장~</li>
+        </ul>
+      </section>
+      <section id="db">
+        <div id="table">
+          <form id="reservation-form">
+            <fieldset>
+              <!-- <legend>예약하기</legend> -->
+              <div>
+                <p>예약자명</p>
+                <input id="reservationname" type="text" placeholder="예약자명">
+              </div>
+
+              <div>
+                <p>연락처</p>
+                <input id="phone_number" type="text" placeholder="연락처">
+              </div>
+
+              <div>
+                <p>인원 수</p>
+                <input id="people_number" type="text" placeholder="인원 수">
+              </div>
+
+              <div>
+                <p>예약일</p>
+                <input id="order_date" type="text" placeholder="예약일">
+              </div>
+
+              <div>
+                <p>하실 말씀</p>
+                <input id="comment" type="text" placeholder="하실 말씀">
+              </div>
+
+            </fieldset>
+          </form>
+
+          <table id="reservation-list">
+            <thead>
+            <tr>
+              <th class="a">No.</th>
+              <th class="b">예약자명</th>
+              <th class="c">연락처</th>
+              <th class="d">인원 수</th>
+              <th class="e">예약일</th>
+              <th class="f">하실 말씀</th>
+            </tr>
+            </thead>
+            <tbody>
+              <!--넌적스-->
+              {% for reservation in reservations %}
+              <tr>
+                <td class="a">{{reservation.id}}</td>
+                <td class="b">{{reservation.name}}</td>
+                <td class="c">{{reservation.phone_number}}</td>
+                <td class="d">{{reservation.people_number}}</td>
+                <td class="e">{{reservation.order_date}}</td>
+                <td class="f">{{reservation.comment}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>    
+  
+          <div id="button">
+            <button id="check1" type="submit">예약하기</button>
+            <button id="check2" type="">예약조회</button>
+          </div>
+        </div>
+        <br>
+      </section>
+
+      <footer>
+        <img src="/img/logo.png" alt="로고">
+        <p>
+          Copyright 2023. Daebak-Restaurant Company. All Rights Reseved.
+        </p>
+      </footer>
+
+    </main>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/sequelize.js"></script>
+    <script src="/js/hide.js"></script>
+  </body>
+</html>
