@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>(대/박/맛/집) (로/그/인)</title>
+  <link rel="stylesheet" href="/css/joins.css">
+</head>
+
+<body>
+  {% if user and user.userName %}
+  <header>
+    <a href="http://localhost:8080"><img src="/img/logo.png" alt="로고"></a>
+    <ul>
+      <li><a href="http://localhost:8080/users/1">이벤트</a></li>
+      <li><a href="http://localhost:8080/likes/1">메-뉴</a></li>
+      <li><a href="http://localhost:8080/reservations/1">예-약</a></li>
+      <li class="game"><a href="http://localhost:8080/games/1">게-임</a></li>
+      <li class="sign-up"><a href="http://localhost:8080/joins/1">MY</a></li>
+    </ul>
+  </header>
+  <main>
+    <section>
+      <div id="success">
+        <div class="user-name">안녕하세요 {{user.nick}}님</div>
+        <input type="hidden" id="my-id" value="user.userName">
+        <a href="/auth/logout" id="logout" class="btn">로그아웃</a>  
+      </div>
+    {% else %}
+    <header>
+      <a href="http://localhost:8080"><img src="/img/logo.png" alt="로고"></a>
+      <ul>
+        <li><a href="http://localhost:8080/users/1">이벤트</a></li>
+        <li><a href="http://localhost:8080/likes/1">메-뉴</a></li>
+        <li><a href="http://localhost:8080/reservations/1">예-약</a></li>
+        <li class="sign-up"><a href="http://localhost:8080/joins/1">로그인</a></li>
+      </ul>
+    </header>
+  
+    <main>
+  
+      <section>
+      <h1>로그인하기</h1>
+      <div class="login-join">
+        <form id="login-form" action="/auth/login" method="post">
+          <div class="input-group">
+            <label for="userName">아이-디</label>
+            <input id="userName" type="text" name="userName" required autofocus>
+          </div>
+          <div class="input-group">
+            <label for="password">비밀번호</label>
+            <input id="password" type="password" name="password" required>
+          </div>
+          <div class="member">
+            <p>
+              회원이 아니신가요?
+              <a id="join" href="/join" class="btn">회원가입하기</a>
+            </p>
+            <button id="login" type="submit" class="btn">로그인 ♥</button>  
+          </div>
+        </form>  
+      </div>
+      {% endif %}
+    </section>
+  </main>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    window.onload = () => {
+      const errorParam = new URL(location.href).searchParams.get('error');
+      if (errorParam) {
+        alert(decodeURIComponent(errorParam));
+      }
+    };
+  </script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="/sequelize.js"></script>
+</body>
+
+</html>

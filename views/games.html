@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(대/박/맛/집) (게/임)</title>
+    <link rel="stylesheet" href="/css/games.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/game.js"></script>
+    <script src="/js/gameSocket.js"></script>
+  </head>
+  <body data-nick="{{ user.nick }}">
+    {% if user and user.userName %}
+
+    <header>
+      <a href="http://localhost:8080"><img src="/img/logo.png" alt="로고"></a>
+      <ul>
+        <li><a href="http://localhost:8080/users/1">이벤트</a></li>
+        <li><a href="http://localhost:8080/likes/1">메-뉴</a></li>
+        <li><a href="http://localhost:8080/reservations/1">예-약</a></li>
+        <li class="game"><a href="http://localhost:8080/games/1">게-임</a></li>
+        <li class="sign-up"><a href="http://localhost:8080/joins/1">MY</a></li>
+      </ul>
+    </header>
+
+    {% else %}
+  
+    <header>
+      <a href="http://localhost:8080"><img src="/img/logo.png" alt="로고"></a>
+      <ul>
+          <li><a href="http://localhost:8080/users/1">이벤트</a></li>
+          <li><a href="http://localhost:8080/likes/1">메-뉴</a></li>
+          <li><a href="http://localhost:8080/reservations/1">예-약</a></li>
+          <li class="sign-up"><a href="http://localhost:8080/joins/1">로그인</a></li>
+        </ul>
+    </header>
+
+    {% endif %}
+
+    <main>
+
+      <section id="rules">
+        <h1>끝! 말! 잇! 기!</h1>
+        <p>규칙1. 단어의 맨 끝 글자에 이어서 말해주세요!</p>
+        <p>규칙2. 오로지&nbsp;<span>음식 이름</span>으로만 작성해주세요!</p>
+      </section>
+      <section id="game">
+        <h2><span>탕수육</span>으로 시작합니다~^^</h2>
+        <div id="chat">
+          <!-- 채팅 메시지 영역 -->
+        </div>
+        <div id="submit">
+          <input type="text" id="test" placeholder="두근두근 끝말잇기">
+          <button onclick="send()">입력♥</button>
+        </div>
+      </section>   
+
+        <footer>
+            <img src="/img/logo.png" alt="로고">
+            <p>
+            Copyright 2023. Daebak-Restaurant Company. All Rights Reseved.
+            </p>
+        </footer>
+    </main>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/sequelize.js"></script>
+
+  </body>
+</html>

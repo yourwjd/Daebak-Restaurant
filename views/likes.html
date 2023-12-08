@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(대/박/맛/집) (메/뉴)</title>
+    <link rel="stylesheet" href="/css/likes.css">
+  </head>
+  <body>
+    {% if user and user.userName %}
+
+    <header>
+      <a href="http://localhost:8080"><img src="/img/logo.png" alt="로고"></a>
+      <ul>
+        <li><a href="http://localhost:8080/users/1">이벤트</a></li>
+        <li><a href="http://localhost:8080/likes/1">메-뉴</a></li>
+        <li><a href="http://localhost:8080/reservations/1">예-약</a></li>
+        <li class="game"><a href="http://localhost:8080/games/1">게-임</a></li>
+        <li class="sign-up"><a href="http://localhost:8080/joins/1">MY</a></li>
+      </ul>
+    </header>
+      
+    {% else %}
+  
+    <header>
+      <a href="http://localhost:8080"><img src="/img/logo.png" alt="로고"></a>
+      <ul>
+          <li><a href="http://localhost:8080/users/1">이벤트</a></li>
+          <li><a href="http://localhost:8080/likes/1">메-뉴</a></li>
+          <li><a href="http://localhost:8080/reservations/1">예-약</a></li>
+          <li class="sign-up"><a href="http://localhost:8080/joins/1">로그인</a></li>
+        </ul>
+    </header>
+
+    {% endif %}
+
+    <main>
+      <section id="banner">
+        <h1>사/장/님/추/천</h1>
+        <article>
+          <img src="/img/recommend.png" alt="추천 메뉴 파마머리 주먹밥 배너">
+        </article>
+      </section>
+
+      <article>
+        <img src="/img/jjan.png" alt="대박 맛집 홍보 배너">
+      </article>
+
+      <section id="db">
+        <h2>전/체/메/뉴</h2>
+        <p>☞ 좋아요 해주시면 제가 좋아해요</p>
+
+
+        <div id="menu1">
+          <ul>
+
+            <li>
+              <img src="/img/m1.png" alt="햄버거 이미지">
+              <div class="table">
+                <h3>대박 촉촉 햄버거</h3>
+                <form class="like-form">
+                  <fieldset>
+                    <input id="like1" class="liked" type="checkbox">
+                    <div>
+                      <!-- <p class="like-count">0</p> -->
+                      <!-- <button data-like-id="like1" class="like-button" type="submit">Ⅴ</button> -->
+                    </div>
+                  </fieldset>
+                </form>
+              </div>
+            </li>
+
+            <li>
+              <img src="/img/m2.png" alt="팬케이크 이미지">
+              <div class="table">
+                <h3>피사의 팬케이크</h3>
+                <form class="like-form">
+                  <fieldset>
+                    <input id="like2" class="liked" type="checkbox">
+                    <div>
+                      <!-- <p class="like-count">0</p> -->
+                      <!-- <button data-like-id="like2" class="like-button" type="submit">Ⅴ</button> -->
+                    </div>
+                  </fieldset>
+                </form>
+              </div>
+            </li>
+
+            <li>
+              <img src="/img/m3.png" alt="주먹밥 이미지">
+              <div class="table">
+                <h3>파마머리 주먹밥</h3>
+                <form class="like-form">
+                  <fieldset>
+                    <input id="like3" class="liked" type="checkbox">
+                    <div>
+                      <!-- <p class="like-count">0</p> -->
+                      <!-- <button data-like-id="like3" class="like-button" type="submit">Ⅴ</button> -->
+                    </div>
+                  </fieldset>
+                </form>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+
+        <div id="menu2">
+          <ul>
+
+            <li>
+              <img src="/img/m4.png" alt="카레 이미지">
+              <div class="table">
+                <h3>도마도 커어리</h3>
+                <form class="like-form">
+                  <fieldset>
+                    <input id="like4" class="liked" type="checkbox">
+                    <div>
+                      <!-- <p class="like-count">0</p> -->
+                      <!-- <button data-like-id="like4" class="like-button" type="submit">Ⅴ</button> -->
+                    </div>
+                  </fieldset>
+                </form>
+              </div>
+            </li>
+
+            <li>
+              <img src="/img/m5.png" alt="닭다리 이미지">
+              <div class="table">
+                <h3>온리 완 닭다리</h3>
+                <form class="like-form">
+                  <fieldset>
+                    <input id="like5" class="liked" type="checkbox">
+                    <div>
+                      <!-- <p class="like-count">0</p> -->
+                      <!-- <button data-like-id="like5" class="like-button" type="submit">Ⅴ</button> -->
+                    </div>
+                  </fieldset>
+                </form>
+              </div>
+            </li>
+
+            <li>
+              <img src="/img/m6.png" alt="푸딩 이미지">
+              <div class="table">
+                <h3>푸딩 아라모오드</h3>
+                <form class="like-form">
+                  <fieldset>
+                    <input id="like6" class="liked" type="checkbox">
+                    <div>
+                      <!-- <p class="like-count">0</p> -->
+                      <!-- <button data-like-id="like6" class="like-button" type="submit">Ⅴ</button> -->
+                    </div>
+                  </fieldset>
+                </form>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+      </section>
+
+      <footer>
+        <img src="/img/logo.png" alt="로고">
+        <p>
+          Copyright 2023. Daebak-Restaurant Company. All Rights Reseved.
+        </p>
+      </footer>
+    </main>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/sequelize.js"></script>
+    <script src="/js/count.js"></script>
+  </body>
+</html>

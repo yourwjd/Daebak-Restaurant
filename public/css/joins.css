@@ -1,0 +1,202 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #2AB94F;
+    font-weight: 400;
+}
+li{
+    list-style: none;
+}
+header{
+    position: absolute;
+    top: calc(100vw * 25 / 1920);
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 5%;
+    width: 90%;
+    height: auto;
+    z-index: 1;
+}
+header img{
+    width: calc(100vw * 212 / 1920);
+}
+header li{
+    display: inline-block;
+    background: #000;
+    margin-left: calc(100vw * 48 / 1920);
+    width: calc(100vw * 174 / 1920);
+    height: calc(100vw * 60 / 1920);
+    border-radius: 50%;
+    text-align: center;
+}
+header li a{
+    display: block;
+    margin-top: calc(100vw * 15 / 1920);
+    width: 100%;
+    height: 100%;
+    font-family: 'HYGothic-medium';
+    font-size: calc(100vw * 24 / 1920);
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+}
+.game{
+  background: #FFFF01;
+}
+.game a{
+  color: #000;
+}
+
+.sign-up{
+  background: red;
+}
+.sign-up a{
+  color: #fff;
+}
+
+main{
+    width: 100%;
+    overflow: auto;
+}
+
+section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:100vh;
+}
+section h1{
+  margin-bottom: calc(100vw * -60 / 1920);
+  font-family: 'Expo M';
+  font-size: calc(100vw * 150 / 1920);
+  color: #fff;
+  -webkit-text-stroke: calc(100vw * 2 / 1920) red;
+  z-index: 1;
+}
+
+.login-join{
+  width: calc(100vw * 1024 / 1920);
+  height: calc(100vw * 550 / 1920);
+  background: #fff;
+  border: calc(100vw * 10 / 1920) solid red;
+  border-radius: calc(100vw * 60 / 1920);
+}
+#joinpage .login-join{
+  height: calc(100vw * 604 / 1920);
+}
+
+.login-join h2{
+  margin-top: calc(100vw * 80 / 1920);
+  text-align: center;
+  font-family: 'HYGothic-extra';
+}
+
+#login-form, #join-form{
+  font-family: 'HYGothic-extra';
+  font-size: calc(100vw * 30 / 1920);
+}
+#login-form{
+  margin: calc(100vw * 100 / 1920) calc(100vw * 80 / 1920);
+  font-family: 'HYGothic-extra';
+  font-size: calc(100vw * 30 / 1920);
+}
+#join-form{
+  margin: calc(100vw * 30 / 1920) calc(100vw * 80 / 1920);
+  font-family: 'HYGothic-extra';
+  font-size: calc(100vw * 30 / 1920);
+}
+
+.input-group { 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#login-form .input-group { 
+  margin-bottom: calc(100vw * 45 / 1920); 
+}
+#join-form .input-group { 
+  margin-bottom: calc(100vw * 15 / 1920); 
+}
+
+input[type='text'], input[type='password'] {
+  border-radius: calc(100vw * 8 / 1920);
+  width: calc(100vw * 650 / 1920);
+  height: calc(100vw * 60 / 1920);
+  padding: calc(100vw * 10 / 1920);
+  border: calc(100vw * 8 / 1920) solid #2AB94F;
+}
+
+.member{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: calc(100vw * 60 / 1920);
+  font-size: calc(100vw * 30 / 1920);
+}
+#joinpage .member{
+  display: flex;
+  justify-content: center;
+  margin-top: calc(100vw * 20 / 1920);
+}
+
+.btn {
+  padding: 0 5px;
+  text-decoration: none;
+  cursor: pointer;
+  color: crimson;
+  height: 37px;
+}
+
+#login, #join-btn{
+  width: calc(100vw * 260 / 1920);
+  height: calc(100vw * 90 / 1920);
+  font-family: 'Expo M';
+  font-size: calc(100vw * 40 / 1920);
+  background: #2AB94F;
+  color: #fff;
+  border: none;
+  border-radius: calc(100vw * 20 / 1920);
+}
+
+#success{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: calc(100vw * 1024 / 1920);
+  height: calc(100vw * 550 / 1920);
+  background: #fff;
+  border: calc(100vw * 10 / 1920) solid red;
+  border-radius: calc(100vw * 60 / 1920);
+}
+.user-name { 
+  margin-bottom: calc(100vw * 60 / 1920);
+  text-align: center;
+  color: #000;
+  font-size: calc(100vw * 40 / 1920);
+  font-weight: bold;
+  }
+
+  #success #logout{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    width: calc(100vw * 260 / 1920);
+    height: calc(100vw * 90 / 1920);
+    font-family: 'Expo M';
+    font-size: calc(100vw * 40 / 1920);
+    background: #2AB94F;
+    color: #fff;
+    border: none;
+    border-radius: calc(100vw * 20 / 1920);
+  }
+

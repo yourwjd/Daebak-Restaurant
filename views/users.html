@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(대/박/맛/집) (이/벤/트)</title>
+    <link rel="stylesheet" href="/css/users.css">
+  </head>
+  <body>
+    {% if user and user.userName %}
+
+    <header>
+      <a href="http://localhost:8080"><img src="/img/logo.png" alt="로고"></a>
+      <ul>
+        <li><a href="http://localhost:8080/users/1">이벤트</a></li>
+        <li><a href="http://localhost:8080/likes/1">메-뉴</a></li>
+        <li><a href="http://localhost:8080/reservations/1">예-약</a></li>
+        <li class="game"><a href="http://localhost:8080/games/1">게-임</a></li>
+        <li class="sign-up"><a href="http://localhost:8080/joins/1">MY</a></li>
+      </ul>
+    </header>
+      
+    {% else %}
+  
+    <header>
+      <a href="http://localhost:8080"><img src="/img/logo.png" alt="로고"></a>
+      <ul>
+          <li><a href="http://localhost:8080/users/1">이벤트</a></li>
+          <li><a href="http://localhost:8080/likes/1">메-뉴</a></li>
+          <li><a href="http://localhost:8080/reservations/1">예-약</a></li>
+          <li class="sign-up"><a href="http://localhost:8080/joins/1">로그인</a></li>
+        </ul>
+    </header>
+
+    {% endif %}
+
+    <main>
+      <section id="banner">
+        <h3>이.벤.트 진행 중</h3>
+        <h3>이.벤.트 진행 중</h3>
+        <h3>이.벤.트 진행 중</h3>
+        <h3>이.벤.트 진행 중</h3>
+        <h3>이.벤.트 진행 중</h3>
+        <h3>이.벤.트 진행 중</h3>
+      </section>
+
+      <article>
+        <img src="/img/eventarticle.png" alt="계란과 피자를 더한 신메뉴의 이름을 구하는 이벤트 배너">
+      </article>
+
+      <section id="db">
+        <div id="text">
+          <p>멋진 아이디어</p>
+          <p>☞ 일등에게 신메뉴 쿠폰</p>
+        </div>
+        <div id="table">
+          <table id="user-list">
+            <thead>
+            <tr>
+              <th class="a">No.</th>
+              <th class="b">내용</th>
+              <th class="c">작성자</th>
+              <th class="d">작성일</th>
+            </tr>
+            </thead>
+            <tbody>
+              <!--넌적스-->
+              {% for user in users %}
+              <tr>
+                <td class="a">{{user.id}}</td>
+                <td class="b">{{user.comment}}</td>
+                <td class="c">{{user.name}}</td>
+                <td class="d">{{user.created_at}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>  
+  
+            <form id="user-form">
+              <fieldset>
+                <div>
+                  <input id="comment" type="text" placeholder="메뉴의 이름을 지어주세요">
+                  <input id="username" type="text" placeholder="성함을 적어주세요">
+                </div>
+                <button type="submit">참여하기</button>
+              </fieldset>
+            </form>
+
+        </div>
+  
+      </section>
+
+      <footer>
+        <img src="/img/logo.png" alt="로고">
+        <p>
+          Copyright 2023. Daebak-Restaurant Company. All Rights Reseved.
+        </p>
+      </footer>
+    </main>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/sequelize.js"></script>
+
+  </body>
+</html>
