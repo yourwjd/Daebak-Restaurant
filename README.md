@@ -6,7 +6,7 @@ MYSQL 시퀄라이즈를 활용한 NODE.JS
 
 <br><br><br>
 구조 형성, 사용한 라이브러리
-<ol>
+<ul>
   <li>npm i -D</li>
   <li>npm init</li>
   <li>express</li>
@@ -23,4 +23,4 @@ MYSQL 시퀄라이즈를 활용한 NODE.JS
   <li>socket.io</li>
   <li>cookie-parser</li>
   <li>date-fns</li>
-</ol>
+</ul>
